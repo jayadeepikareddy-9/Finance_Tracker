@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup | FinTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+
+<div class="auth-card">
+  <h2>Create Account</h2>
+
+  <input type="text" id="name" name="name" placeholder="Full Name" required>
+  <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+  <!-- PASSWORD -->
+  <div class="password-field">
+    <input
+      type="password"
+      id="password"
+      placeholder="Create Password"
+      required
+    >
+    <span onclick="togglePassword('password')" class="eye">👁️</span>
+  </div>
+
+  <!-- CONFIRM PASSWORD -->
+  <div class="password-field">
+    <input
+      type="password"
+      id="confirmPassword"
+      placeholder="Confirm Password"
+      required
+    >
+    <span onclick="togglePassword('confirmPassword')" class="eye">👁️</span>
+  </div>
+
+  <button onclick="signup()">Register</button>
+
+  <p class="switch">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </p>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

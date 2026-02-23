@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | FinTrack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <h2 id="welcome">Welcome</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- ADMIN CONTROLS -->
+ <div id="admin-controls" style="display:none;">
+  <button onclick="exportUsersToExcel()">Download Registrations (Excel)</button>
+</div>
+
+
+  <!-- STATS CARDS -->
+  <section class="cards">
+    <div class="card income">
+      <h4>Total Income</h4>
+      <p id="totalIncome">₹0</p>
+    </div>
+
+    <div class="card expense">
+      <h4>Total Expense</h4>
+      <p id="totalExpense">₹0</p>
+    </div>
+
+    <div class="card balance">
+      <h4>Balance</h4>
+      <p id="balance">₹0</p>
+    </div>
+  </section>
+
+  <!-- ADD TRANSACTION -->
+  <section class="form">
+    <h3>Add Transaction</h3>
+
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <input id="category" type="text" placeholder="Category (Food, Rent, Salary…)" />
+    <input id="amount" type="number" placeholder="Amount" />
+    <input id="date" type="date" />
+
+    <button onclick="addTransaction()">Add Transaction</button>
+  </section>
+
+  <!-- CHARTS -->
+  <section class="charts">
+    <div class="chart-box">
+      <h4>Income vs Expense</h4>
+      <canvas id="incomeExpenseChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h4>Category Breakdown</h4>
+      <canvas id="categoryChart"></canvas>
+    </div>
+  </section>
+
+  <!-- NO DATA MESSAGE -->
+  <p id="noDataMsg" style="display:none;text-align:center;margin-top:20px;">
+    No data available to display charts.
+  </p>
+
+  <!-- JS -->
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>
